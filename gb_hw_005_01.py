@@ -1,34 +1,15 @@
-# first_number =float(input(("Первое число: ")))
-# simbol = input('Действие: ')
-# second_number =float(input(("Второе число: ")))
-# result = None
+#   1. Создать программный файл в текстовом формате, записать в него построчно данные, вводимые пользователем.
+#   Об окончании ввода данных будет свидетельствовать пустая строка.
+
+
+file = open(r"files\text_file.txt", "w", encoding='utf-8' )
 
 while True:
-    question = input("Для работы нажмите 'Enter', для окончания введите 'end': ")
-
-    if question == "end":
+    content = input("Введите строку, для добавления в файл. Для окончания введите пустую строку: ")
+    if content == "":
         break
     else:
-        first_number = float(input(("Первое число: ")))
-        simbol = input('Действие: ')
-        second_number = float(input(("Второе число: ")))
-        result = None
-        if simbol == "+":
-            result = first_number + second_number
-            print(f'Результат: {result}')
+        file.write(f'{content}\n')
 
-        elif simbol == "-":
-            result = first_number - second_number
-            print(f'Результат: {result}')
-
-        elif simbol == "*":
-            result = first_number * second_number
-            print(f'Результат: {result}')
-
-        elif simbol == "/":
-            result = first_number / second_number
-            print(f'Результат: {result}')
-
-        else:
-            print('Что-то пошло не так')
-
+file.close()
+print("Работа с файлом завершена")
